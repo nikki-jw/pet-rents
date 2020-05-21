@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* // Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+
+
+h4 {
+    padding-left: 60px;
+}
+
+.nav-logo {
+    height: 2em;
+    margin: 0px;
+    padding: 0px;
+}
+
+.body-img {
+    width: 100%;
+    align-items: center;
+}
+
+.display-pic {
+    width: 25em;
+    padding-top: 14px;
+}
+
+.teddy {
+    width: 20em;
+}
+
+.donate-img {
+    width: 30em;
+}
+
+#button {
+    margin-bottom: 3px;
+}
+
+#card {
+    padding: 20px;
+}
+
+#top-row {
+    background-color: #8be1ee;
+}
+
+#last-comment {
+    margin-bottom: 60px;
+}
+
+#box1 {
+    background-color: #ec944c;
+    color: white;
+}
+
+#donate-text {
+    padding-top: 80px;
+    padding-bottom: 10px;
+}
+
+#gif {
+    margin-bottom: 80px;
+}
+
+#log-in {
+    margin-left: 45%;
+}
+
+#sign-up {
+    margin-left: 45%;
+}

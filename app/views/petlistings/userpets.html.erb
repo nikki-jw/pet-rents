@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="d-flex flex-wrap">
+        <% if @petlistings == [] %>
+          <h3>  <%= "Sorry, you haven't no listed pets"%> </h3>
+
+        <%else%>
+            <% for petlisting in @petlistings%>
+                <div class="card" style="width: 15rem; margin: 5px;">
+                    <%= image_tag petlisting.picture, :class => "card-img-top" if petlisting.picture.attached? %>
+                    <div class="card-body">
+                        <h5 class="card-title"> <%=petlisting.title%> </h5>
+                        <p class="card-text"> <%=petlisting.description%></p>
+                        <%= link_to "Show pet", petlisting_path(petlisting.id), :class => "btn btn-info" %>
+                    </div>
+                </div>
+            <%end%>
+        <%end%>
+    </div>
+</div>

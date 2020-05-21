@@ -1,0 +1,39 @@
+<div class="container">
+<div class="row">
+
+<div class="col">
+    <br>
+    <h3>Why make a donation?</h3>
+    <br>
+    <p>Sydney Dogs and Cats Home is a charity pound and community facility</p>
+    <p>Located in next to St. George Animal Hospital in Cartlon, New South Wales</p>
+    <p>They have been taking care of Sydney's lost, abandoned and neglected pets since 1946</p>
+    <p>Today they open their doors to 3000 pets each year, from all over Sydney</p>
+     <br>
+    <button data-stripe="donate" class="btn btn-info btn-lg">Donate</button>
+</div>
+
+<div class="col">
+    <%= image_tag("woman-in-yellow.jpg", :class => "donate-img") %>
+</div>
+
+
+    </div>
+</div>
+
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  document
+    .querySelector("[data-stripe='donate']")
+    .addEventListener("click", () => {
+      const stripe = Stripe(
+        "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+      );
+
+      stripe.redirectToCheckout({
+        sessionId: "<%= @session_id %>"
+      });
+    });
+</script>

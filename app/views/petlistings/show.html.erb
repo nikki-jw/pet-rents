@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2> Hi!</h2>
+            <h3>I'm <%= @petlisting.title%></h3>
+
+            <%= image_tag @petlisting.picture, :class => "display-pic" if @petlisting.picture.attached? %>
+        </div>
+        <div class="col">
+            <h3>About Me</h3>
+            <p> <%= @petlisting.description%> </p>
+            <h3>Species: <%= @petlisting.species.species %> </h3>
+            <h3>Contact My Hooman: <%= current_user.email %> </h3>
+            <br>
+            <% if current_user.id == @petlisting.user.id %>
+                <%= link_to  "Edit", editpetlisting_path(@petlisting.id), class: "btn btn-info", id: "button" %>
+                <%= form_with model: @petlisting, local: true, method: "delete" do |form| %>
+                    <%= submit_tag "Delete", class: "btn btn-info" %>
+                <% end %>
+            <% end %>
+
+        </div>
+    </div>
+</div>
